@@ -5,17 +5,19 @@ if [ -f vendor/autoload.php ]; then
 fi
 
 if [ ! -f ".env" ]; then
-    echo "Creating env file automatically for $APP_ENV"
+    echo "Creating an env file for $APP_ENV"
     cp env.example .env
 else
-   echo "env file found"
+    echo "Env file is found."
 fi
 
 # need to investigate here migration always failing
-# may be because of ${}
+
+php artisan config:clear
+php artisan cache:clear
 php artisan migrate
 php artisan key:generate
-php artisan optimize:clear
 
 php artisan serve --port=$PORT --host=0.0.0.0 --env=.env
+
 exec docker-php-entrypoint "$@"
