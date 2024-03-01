@@ -11,11 +11,9 @@ else
     echo "Env file is found."
 fi
 
-# need to investigate here migration always failing
 
-php artisan config:clear
-php artisan cache:clear
-php artisan migrate --seed
+php artisan optimize:clear
+php artisan migrate:refresh --seed
 php artisan key:generate
 
 php artisan serve --port=$PORT --host=0.0.0.0 --env=.env
