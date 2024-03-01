@@ -11,7 +11,6 @@
 
 <body>
     <h1 class="text-center my-3">Welcome to my Dockerized Laravel App</h1>
-    <h1 class="text-center my-3">I hate my life :)</h1>
     <br>
     <div class="col-8 offset-2 border p-3">
         <table class="table">
