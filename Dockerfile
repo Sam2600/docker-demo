@@ -1,7 +1,7 @@
 FROM php:apache as php
 
 RUN apt-get update -y
-RUN apt-get install -y unzip git
+RUN apt-get install -y unzip git nodejs npm
 RUN docker-php-ext-install pdo pdo_mysql
 
 WORKDIR /var/www/html

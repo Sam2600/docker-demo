@@ -15,7 +15,7 @@ fi
 
 php artisan config:clear
 php artisan cache:clear
-php artisan migrate
+php artisan migrate --seed
 php artisan key:generate
 
 php artisan serve --port=$PORT --host=0.0.0.0 --env=.env
